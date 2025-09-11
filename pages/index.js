@@ -56,12 +56,36 @@ export default function Home() {
           </div>
 
           {/* Notes Section */}
-          <div className="xl:col-span-2">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
-              <p className="text-slate-600">All your saved tokens are displayed below in chronological order.</p>
-              <p className="text-slate-600">For Security Reasons, Please CLEAR YOUR TOKEN AFTER COPYING</p>
-            </div>
+         <div className="xl:col-span-2">
+  <div className="mb-6">
+    <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
+    <p className="text-slate-600">
+      All your saved tokens are displayed below in chronological order.
+    </p>
+    <div className="mt-4 p-4 border rounded-lg bg-gray-50">
+      <h3 className="text-lg font-semibold text-slate-700 mb-2">
+        How to Use
+      </h3>
+      <ol className="list-decimal list-inside text-slate-600 space-y-2">
+        <li>
+          **In SAM Tool:** Open this page inside your Saviynt SAM tool browser session.
+        </li>
+        <li>
+          **Copy Token:** In the same session, go to **Admin > Webservice Conf** and copy your token.
+        </li>
+        <li>
+          **Paste Token:** Paste the token into the field on this page.
+        </li>
+        <li>
+          **Local Use:** Open this exact page on your local browser and copy the token for Postman or other tools.
+        </li>
+      </ol>
+    </div>
+    <p className="mt-4 text-slate-600">
+      For Security Reasons, Please **CLEAR YOUR TOKEN** AFTER COPYING.
+    </p>
+  </div>
+</div>
             <NoteList key={refresh} />
           </div>
         </div>
@@ -70,3 +94,4 @@ export default function Home() {
   );
 
 }
+
