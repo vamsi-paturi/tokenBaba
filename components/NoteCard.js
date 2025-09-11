@@ -1,5 +1,3 @@
-// components/NoteCard.js
-
 import React, { useState } from "react";
 
 const NoteCard = ({ note, onDelete }) => {
@@ -44,11 +42,11 @@ const NoteCard = ({ note, onDelete }) => {
   return (
     <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-in">
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-lg font-semibold text-slate-800 line-clamp-2 group-hover:text-primary-600 transition-colors duration-200">
+        <h3 className="text-lg font-semibold text-slate-800 group-hover:text-primary-600 transition-colors duration-200 break-words overflow-wrap-anywhere max-w-[85%]">
           {note.title}
         </h3>
         
-        <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0">
           <button
             onClick={handleDelete}
             disabled={isDeleting}
@@ -70,12 +68,14 @@ const NoteCard = ({ note, onDelete }) => {
       </div>
 
       <div className="text-slate-600 text-sm leading-relaxed mb-4">
-        {isExpanded ? note.body : truncateText(note.body)}
+        <div className="break-words overflow-wrap-anywhere word-break-all whitespace-pre-wrap max-w-full overflow-hidden">
+          {isExpanded ? note.body : truncateText(note.body)}
+        </div>
         
         {note.body && note.body.length > 150 && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-primary-600 hover:text-primary-700 font-medium ml-2 transition-colors duration-200"
+            className="text-primary-600 hover:text-primary-700 font-medium mt-2 transition-colors duration-200 block"
           >
             {isExpanded ? "Show less" : "Show more"}
           </button>
@@ -84,13 +84,13 @@ const NoteCard = ({ note, onDelete }) => {
 
       <div className="flex items-center justify-between pt-4 border-t border-slate-200">
         <div className="flex items-center space-x-2 text-xs text-slate-500">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>{formatDate(note.createdAt)}</span>
+          <span className="truncate">{formatDate(note.createdAt)}</span>
         </div>
         
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-1 flex-shrink-0">
           <div className="w-2 h-2 bg-accent-400 rounded-full"></div>
           <span className="text-xs text-slate-500 font-medium">Saved</span>
         </div>

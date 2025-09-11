@@ -171,3 +171,58 @@
 @media (prefers-color-scheme: dark) {
   /* Dark mode styles can be added here in future */
 }
+
+@layer utilities {
+  .break-words {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+  
+  .word-break-all {
+    word-break: break-all;
+  }
+  
+  .hyphens-auto {
+    hyphens: auto;
+  }
+  
+  /* Container query support for responsive text */
+  .responsive-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Improved scrollbar for long content */
+.scrollable-content {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
