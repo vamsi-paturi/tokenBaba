@@ -24,7 +24,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Create, store, and organize your tokens from SAM without any Login
+            Create, store, and organize your tokens from SAM without any Login. 
             Real-time synchronization keeps everything up to date across all your devices.
           </p>
         </div>
@@ -56,42 +56,52 @@ export default function Home() {
           </div>
 
           {/* Notes Section */}
-         <div className="xl:col-span-2">
-  <div className="mb-6">
-    <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
-    <p className="text-slate-600">
-      All your saved tokens are displayed below in chronological order.
-    </p>
-    <div className="mt-4 p-4 border rounded-lg bg-gray-50">
-      <h3 className="text-lg font-semibold text-slate-700 mb-2">
-        How to Use
-      </h3>
-      <ol className="list-decimal list-inside text-slate-600 space-y-2">
-        <li>
-          **In SAM Tool:** Open this page inside your Saviynt SAM tool browser session.
-        </li>
-        <li>
-          **Copy Token:** In the same session, go to **Admin > Webservice Conf** and copy your token.
-        </li>
-        <li>
-          **Paste Token:** Paste the token into the field on this page.
-        </li>
-        <li>
-          **Local Use:** Open this exact page on your local browser and copy the token for Postman or other tools.
-        </li>
-      </ol>
-    </div>
-    <p className="mt-4 text-slate-600">
-      For Security Reasons, Please **CLEAR YOUR TOKEN** AFTER COPYING.
-    </p>
-  </div>
-</div>
+          <div className="xl:col-span-2">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
+              <p className="text-slate-600 mb-4">All your saved tokens are displayed below in chronological order.</p>
+              
+              {/* Instructions Card */}
+              <div className="mt-4 p-6 border border-slate-200 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-700 mb-3 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  How to Use
+                </h3>
+                <ol className="list-decimal list-inside text-slate-600 space-y-2 text-sm leading-relaxed">
+                  <li>
+                    <strong>In SAM Tool:</strong> Open this page inside your Saviynt SAM tool browser session.
+                  </li>
+                  <li>
+                    <strong>Copy Token:</strong> In the same session, go to <code className="bg-slate-200 px-1 py-0.5 rounded text-xs">Admin → Webservice Conf</code> and copy your token.
+                  </li>
+                  <li>
+                    <strong>Paste Token:</strong> Paste the token into the field on this page.
+                  </li>
+                  <li>
+                    <strong>Local Use:</strong> Open this exact page on your local browser and copy the token for Postman or other tools.
+                  </li>
+                </ol>
+                
+                <div className="mt-4 p-3 bg-orange-50 border border-orange-200 rounded-lg flex items-start">
+                  <svg className="w-5 h-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                  </svg>
+                  <div>
+                    <p className="text-orange-800 font-medium text-sm">Security Notice</p>
+                    <p className="text-orange-700 text-sm mt-1">
+                      For security reasons, please <strong>CLEAR YOUR TOKEN</strong> after copying it to your tools.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <NoteList key={refresh} />
           </div>
         </div>
       </div>
     </Layout>
   );
-
 }
-
