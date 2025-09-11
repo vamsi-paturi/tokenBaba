@@ -24,7 +24,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Create, store, and organize your tokens and notes with our intuitive interface. 
+            Create, store, and organize your tokens from SAM without any Login
             Real-time synchronization keeps everything up to date across all your devices.
           </p>
         </div>
@@ -60,6 +60,7 @@ export default function Home() {
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
               <p className="text-slate-600">All your saved tokens are displayed below in chronological order.</p>
+              <p className="text-slate-600">For Security Reasons, Please CLEAR YOUR TOKEN AFTER COPYING</p>
             </div>
             <NoteList key={refresh} />
           </div>
@@ -67,4 +68,5 @@ export default function Home() {
       </div>
     </Layout>
   );
+
 }
