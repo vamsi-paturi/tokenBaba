@@ -20,7 +20,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 mb-4">
             Manage Your{" "}
             <span className="bg-gradient-to-r from-primary-600 via-purple-600 to-accent-600 bg-clip-text text-transparent">
-              Tokens
+              Notes & Tokens
             </span>
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -71,13 +71,13 @@ export default function Home() {
                 </h3>
                 <ol className="list-decimal list-inside text-slate-600 space-y-2 text-sm leading-relaxed">
                   <li>
-                    <strong>In SAM Tool:</strong> Open this page inside your remote device browser session.
+                    <strong>In your Remote Session Tool:</strong> Open this page inside your remote device browser session.
                   </li>
                   <li>
-                    <strong>Copy Token:</strong> In the same session, navigate to your page from which the note need to be Copied.
+                    <strong>Copy Note:</strong> In the same session, navigate to your page from which the note need to be Copied.
                   </li>
                   <li>
-                    <strong>Paste Token:</strong> Paste the Note/Token into the field on this page.
+                    <strong>Paste Note:</strong> Paste the Note/Token into the field on this page.
                   </li>
                   <li>
                     <strong>Local Use:</strong> Open this exact page on your Local browser or a Mobile Device and copy the Note for your personal use.
@@ -91,7 +91,7 @@ export default function Home() {
                   <div>
                     <p className="text-orange-800 font-medium text-sm">Security Notice</p>
                     <p className="text-orange-700 text-sm mt-1">
-                      For security reasons, please <strong>CLEAR YOUR NOTE</strong> after copying it to your tools.
+                      For security reasons, please <strong>CLEAR YOUR NOTE</strong> after copying it to your Local machines.
                     </p>
                   </div>
                 </div>
