@@ -8,7 +8,7 @@ const NoteCard = ({ note, onDelete }) => {
   const [copyStatus, setCopyStatus] = useState(''); // 'copied', 'error', or ''
 
   const handleDelete = async () => {
-    if (!window.confirm("Are you sure you want to delete this token?")) return;
+    if (!window.confirm("Are you sure you want to delete this note?")) return;
     
     setIsDeleting(true);
     await onDelete(note.id);
@@ -96,7 +96,7 @@ const NoteCard = ({ note, onDelete }) => {
                   ? 'text-red-500 bg-red-50'
                   : 'text-slate-400 hover:text-blue-600 hover:bg-blue-50'
               }`}
-              title={copyStatus === 'copied' ? 'Copied!' : 'Copy token to clipboard'}
+              title={copyStatus === 'copied' ? 'Copied!' : 'Copy note to clipboard'}
             >
               {copyStatus === 'copied' ? (
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +118,7 @@ const NoteCard = ({ note, onDelete }) => {
               onClick={handleDelete}
               disabled={isDeleting}
               className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200 disabled:opacity-50"
-              title="Delete token"
+              title="Delete note"
             >
               {isDeleting ? (
                 <svg className="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ const NoteCard = ({ note, onDelete }) => {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-sm font-medium">Token copied to clipboard!</span>
+                <span className="text-sm font-medium">note copied to clipboard!</span>
               </>
             ) : (
               <>

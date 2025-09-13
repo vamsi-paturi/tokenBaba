@@ -24,7 +24,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Create, store, and organize your tokens from SAM without any Login. 
+            Create, store, and organize your Notes from any device. 
             Real-time synchronization keeps everything up to date across all your devices.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="xl:col-span-2">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Tokens & Notes</h2>
-              <p className="text-slate-600 mb-4">All your saved tokens are displayed below in chronological order.</p>
+              <p className="text-slate-600 mb-4">All your saved Notes/Tokens are displayed below in chronological order.</p>
               
               {/* Instructions Card */}
               <div className="mt-4 p-6 border border-slate-200 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm">
@@ -71,16 +71,16 @@ export default function Home() {
                 </h3>
                 <ol className="list-decimal list-inside text-slate-600 space-y-2 text-sm leading-relaxed">
                   <li>
-                    <strong>In SAM Tool:</strong> Open this page inside your Saviynt SAM tool browser session.
+                    <strong>In SAM Tool:</strong> Open this page inside your remote device browser session.
                   </li>
                   <li>
-                    <strong>Copy Token:</strong> In the same session, go to <code className="bg-slate-200 px-1 py-0.5 rounded text-xs">Admin → Webservice Conf</code> and copy your token.
+                    <strong>Copy Token:</strong> In the same session, navigate to your page from which the note need to be Copied.
                   </li>
                   <li>
-                    <strong>Paste Token:</strong> Paste the token into the field on this page.
+                    <strong>Paste Token:</strong> Paste the Note/Token into the field on this page.
                   </li>
                   <li>
-                    <strong>Local Use:</strong> Open this exact page on your local browser and copy the token for Postman or other tools.
+                    <strong>Local Use:</strong> Open this exact page on your Local browser or a Mobile Device and copy the Note for your personal use.
                   </li>
                 </ol>
                 
@@ -91,7 +91,7 @@ export default function Home() {
                   <div>
                     <p className="text-orange-800 font-medium text-sm">Security Notice</p>
                     <p className="text-orange-700 text-sm mt-1">
-                      For security reasons, please <strong>CLEAR YOUR TOKEN</strong> after copying it to your tools.
+                      For security reasons, please <strong>CLEAR YOUR NOTE</strong> after copying it to your tools.
                     </p>
                   </div>
                 </div>
