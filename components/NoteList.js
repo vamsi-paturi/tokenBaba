@@ -38,6 +38,12 @@ const NoteList = () => {
     }
   };
 
+  const handleUpdate = (id, updatedNote) => {
+    setNotes((prev) => prev.map(note => 
+      note.id === id ? updatedNote : note
+    ));
+  };
+
   if (isLoading) {
     return (
       <div className="space-y-4">
@@ -45,7 +51,11 @@ const NoteList = () => {
           <div key={index} className="bg-white/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 animate-pulse">
             <div className="flex justify-between items-start mb-4">
               <div className="h-6 bg-slate-200 rounded-lg w-3/4"></div>
-              <div className="h-8 w-8 bg-slate-200 rounded-lg"></div>
+              <div className="flex space-x-2">
+                <div className="h-8 w-8 bg-slate-200 rounded-lg"></div>
+                <div className="h-8 w-8 bg-slate-200 rounded-lg"></div>
+                <div className="h-8 w-8 bg-slate-200 rounded-lg"></div>
+              </div>
             </div>
             <div className="space-y-3">
               <div className="h-4 bg-slate-200 rounded w-full"></div>
@@ -82,7 +92,11 @@ const NoteList = () => {
     <div className="space-y-6">
       {notes.map((note, index) => (
         <div key={note.id} style={{ animationDelay: `${index * 0.1}s` }}>
-          <NoteCard note={note} onDelete={handleDelete} />
+          <NoteCard 
+            note={note} 
+            onDelete={handleDelete}
+            onUpdate={handleUpdate}
+          />
         </div>
       ))}
     </div>
